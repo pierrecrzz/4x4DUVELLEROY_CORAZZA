@@ -16,6 +16,9 @@ public class SuperPuissance4_DUVELLEROY_CORAZZA {
     public static void main(String[] args) {
         // TODO code application logic here
         
+    Joueur Joueur1 = new Joueur("joueur1", "rouge");
+    Joueur Joueur2 = new Joueur("joueur2", "jaune");
+    
     }
     
 }
