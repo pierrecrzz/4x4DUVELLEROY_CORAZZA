@@ -15,6 +15,7 @@ public class SuperPuissance4_DUVELLEROY_CORAZZA {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
     }
     
 }
