@@ -9,7 +9,19 @@ package superpuissance4_duvelleroy_corazza;
  * @author valen
  */
 public class Jeton {
+
+        public String Couleur;
+ 
+        public String lireCouleur(){
+            return
+    }
+
+    @Override
+    public String toString() {
+        return "{+ Couleur +}";
+    }
+   
     
-    String couleur;
-    
+
+
 }
