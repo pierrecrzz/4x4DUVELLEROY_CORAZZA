@@ -20,6 +20,18 @@ private Jeton JetonCourant;
 private boolean AvoirTrouNoir;
 private boolean avoirDesintegrateur;
         
+
+public boolean presenceJeton(){  
+    if (JetonCourant==null){
+        return false;
+    }
+    else {
+        return true;
+    }
+}      
+      
+}
+        
   public String lireCouleurDuJeton(){
           if (JetonCourant!= null){
               if (couleur==R)
