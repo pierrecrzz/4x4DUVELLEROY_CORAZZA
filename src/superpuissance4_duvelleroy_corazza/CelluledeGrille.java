@@ -9,12 +9,31 @@ package superpuissance4_duvelleroy_corazza;
  * @author valen
  */
 public class CelluledeGrille {
+
+    public CelluledeGrille() {
+        this.JetonCourant = null;
+        this.AvoirTrouNoir = false;
+        this.avoirDesintegrateur = false;
+    }
     
 private Jeton JetonCourant;
 private boolean AvoirTrouNoir;
 private boolean avoirDesintegrateur;
         
-    Jeton JetonCourant= null;
+  public String lireCouleurDuJeton(){
+          if (JetonCourant!= null){
+              if (couleur==R)
+          }
+          
+          
+
+
+
+
+
+
+
+Jeton JetonCourant= null;
     AvoirTrouNoir= false;
     AvoirDesintegrateur= false;
     // Par défaut une cellule ne possède ni jeton (= à null), ni trou noir (= à false), ni désintegrateur (= à false)
