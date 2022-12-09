@@ -6,6 +6,7 @@ package superpuissance4_duvelleroy_corazza;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -35,18 +36,66 @@ public class Partie {
             listeJoueurs[1].affecterCouleur("rouge");
         }
     }
-    public void creerEtAffecterJeton(Joueur Joueur1){
+    public void creerEtAffecterJeton(Joueur Joueur1, Joueur Joueur2){
         ArrayList<Jeton>jeton= new ArrayList();
         for(int i=0;i<30;i++){
         }
     }
     
    
-    public void initialiserPartie(){
+    public void placerTrousNoirsEtDesintegrateurs(){
+        int trounoir = 5;
+        int d = 2;
+        int D = 3;
+        Random r = new Random();
+        CelluleDeGrille2[] listetn = new CelluleDeGrille2[5];
+        while(trounoir > 0){
+            int x = r.nextInt(6);
+            int y = r.nextInt(7);
+            if(plateau.presenceTrouNoir(x, y) == false){
+                plateau.grille[x][y].placerTrouNoir();
+                listetn[trounoir] = plateau.grille[x][y];
+                trounoir --;
+            }
+        }
+        while(d > 0){
+            int x = r.nextInt(6);
+            int y = r.nextInt(7);
+            if(plateau.grille[x][y].presenceTrouNoir() == false && plateau.grille[x][y].presenceDesintegrateur() == false){
+                plateau.grille[x][y].placerDesintegrateur();
+                d--;
+            }
+        }
         
-    
-                
-        
+        while(D > 0){
+            CelluleDeGrille2 cell = listetn[r.nextInt(listetn.length)];
+            cell.placerDesintegrateur();
+            D--;
+        }
     }
-           
+        
+    public void initialiserPartie(){
+        attribuerCouleurAuxJoueurs();
+        creerEtAffecterJeton(joueurCourant, joueurCourant);
+        placerTrousNoirsEtDesintegrateurs();
+    }
+    
+    
+    public void lancerPartie(){  
+        int i=0;
+        Scanner sc;
+        System.out.print("Saisir pseudo 1er Joueur");
+        sc= new Scanner(System.in);
+        String nomJ1=sc.next();
+        while(plateau.etreGagnantePourJoueur(listeJoueurs[0])==false&&plateau.etreGagnantePourJoueur(listeJoueurs[1])==false&&plateau.grilleRemplie()==false){
+            if (i%2==0){
+                joueurCourant=listeJoueurs[0];
+                i+=1;
+                
+            }
+            
+        }
 }
+}
+
+        
