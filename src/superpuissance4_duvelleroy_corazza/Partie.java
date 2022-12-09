@@ -82,6 +82,7 @@ public class Partie {
     
     
     public void lancerPartie(){  
+        int ans;
         int i=0;
         Scanner sc;
         System.out.print("Saisir pseudo 1er Joueur");
@@ -93,9 +94,33 @@ public class Partie {
                 i+=1;
                 
             }
-            
+             System.out.println("0>jouerjeton,1>recuperer,2>désintegrer");
+            ans = sc.nextInt();
+            plateau.afficherGrilleSurConsole();
         }
+        boolean v1 = plateau.etreGagnantePourJoueur(listeJoueurs[0]);
+        boolean v2 = plateau.etreGagnantePourJoueur(listeJoueurs[1]);
+        if(v1&&!v2){
+            System.out.println("Le joueur 1 gagne");
+        }
+        if(v2 &&!v1){
+            System.out.println("Le joueur 2 gagne");
+        }
+        if (v1 && v2){
+            if(listeJoueurs[0] == joueurCourant){
+                System.out.println("Le joueur 2 gagne");
+            }else{
+                System.out.println("Le joueur 1 gagne");
+            }
+        }
+        if (v1&&v2){
+            if(listeJoueurs[1] == joueurCourant){
+                System.out.println("Le joueur 1 gagne");
+            }else{
+                System.out.println("Le joueur 2 gagne");
+            }
+        
+        }
+    }
 }
-}
-
         
