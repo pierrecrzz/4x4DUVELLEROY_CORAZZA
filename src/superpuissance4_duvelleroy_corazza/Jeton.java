@@ -10,18 +10,27 @@ package superpuissance4_duvelleroy_corazza;
  */
 public class Jeton {
 
-        public String Couleur;
+    String Couleur;
+       
+    public Jeton (String Couleur) {
+        this.Couleur = Couleur ;
+    //constructeur qui initialise la couleur selon le paramètre
+    }
  
-        public String lireCouleur(){
-            return
+    public String lireCouleur(){
+        //on renvoie soit jaune soit rouge
+        return Couleur ;
     }
 
     @Override
     public String toString() {
-        return "{+ Couleur +}";
+        if (Couleur== "rouge"){
+            return "R";
+        }else{      
+            return "J";
+        }
+       
     }
+
    
-    
-
-
 }
