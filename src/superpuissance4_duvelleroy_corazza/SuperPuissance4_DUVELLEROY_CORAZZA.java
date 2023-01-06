@@ -19,6 +19,11 @@ public class SuperPuissance4_DUVELLEROY_CORAZZA {
     Joueur Joueur1 = new Joueur("joueur1", "rouge");
     Joueur Joueur2 = new Joueur("joueur2", "jaune");
     
+        
+    Partie partie = new Partie (J1,J2);
+    partie.initialiserPartie();
+    partie.lancerPartie();
+    
     }
     
 }
