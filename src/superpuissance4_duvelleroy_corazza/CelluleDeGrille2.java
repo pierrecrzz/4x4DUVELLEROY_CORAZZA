@@ -103,4 +103,25 @@ class CelluleDeGrille2 {
             return false;
         }
     }
+    @Override
+    public String toString (){
+        String a= ".";
+        
+        if (lireCouleurDuJeton() == "jaune"){
+            return "J";
+        }
+        if (lireCouleurDuJeton() == "rouge"){
+            return "R";
+        }
+        if (AvoirTrouNoir){
+            a="@" ;   
+        } else if (avoirDesintegrateur) {
+            a="D";
+        }
+        else {
+             a=".";
+        }
+        return a;
+    }
 }
+
